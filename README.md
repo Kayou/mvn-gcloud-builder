@@ -6,8 +6,10 @@ The purpose of this image is to package the build tools required to build a `spr
 
 This image is intended to be used for building `spring-boot` applications within `Google Cloud Build` using a project `cloudbuild.yaml` such as:
 
-    steps:
-    - name: 'gcr.io/$PROJECT_ID/gcloud-maven'
-    args: ['mvn', 'appengine:deploy']
+```
+steps:
+- name: 'gcr.io/$PROJECT_ID/gcloud-maven'
+  args: ['mvn', 'appengine:deploy']
+```
 
 **Note:** I am no linux or docker experts, your fork and contributions to this image are very much welcome.
