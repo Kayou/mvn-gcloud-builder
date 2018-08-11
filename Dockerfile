@@ -48,7 +48,7 @@ RUN apt-get install openjdk-8-jdk -y
 # https://github.com/carlossg/docker-maven/blob/f581ea002e5d067deb6213c00a4d217297cad469/jdk-8/Dockerfile
 RUN mkdir -p ${MAVEN_HOME} ${MAVEN_HOME}/ref \
   && curl -fsSL -o /tmp/apache-maven.tar.gz ${MAVEN_BASE_URL}/apache-maven-${MAVEN_VERSION}-bin.tar.gz \
-  && echo "${MAVEN_SHA} /tmp/apache-maven.tar.gz" | MAVEN_SHA256sum -c - \
+  && echo "${MAVEN_SHA} /tmp/apache-maven.tar.gz" | sha256sum -c - \
   && tar -xzf /tmp/apache-maven.tar.gz -C ${MAVEN_HOME} --strip-components=1 \
   && rm -f /tmp/apache-maven.tar.gz \
   && ln -s ${MAVEN_HOME}/bin/mvn /usr/bin/mvn
